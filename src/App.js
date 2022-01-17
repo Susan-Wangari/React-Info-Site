@@ -1,31 +1,51 @@
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
+//creating the header as a separate component
+function Header(){
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1>Fun facts about React</h1>
-        <ul>
-            <li>Was released in 2013</li>
-            <li>Was originally created by Jordan Walke</li>
-            <li>Has well over 100K stars on GitHub</li>
-            <li>Is maintained by Facebook</li>
-            <li>Powers thousands of enterprise apps, including mobile apps</li>
-        </ul>
-        {/* <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-          </a> */}
-      </header>
+  <header>
+       <nav>
+       <img src={logo} className="App-logo" alt="logo" width="150"/>
+       </nav>
+     </header>
+  )
+};
 
+//footer component
+function Footer(){
+  return (
+<footer>
+     <small>&copy; 2022 Susan Wangari.All rights reserved. </small>
+    </footer>
+  )
+};
+
+function MainComponent (){
+  return (
+    <div>
+      <h1>Reasons for Learning React</h1>
+      <ol>
+        <li>It is composable- broken down to litte pieces that can make a whole.</li>
+        <li>It is fun</li>
+        <li>It is used in many apps</li>
+      </ol>
     </div>
-  );
+  )
 }
+function App() {
+  
+  return (
+    <div>
+       {/* creating an instance of the header */}
+      <Header />
+    
+      <MainComponent />
+    {/* rendering the footer */}
+    <Footer />
+    </div>
+  ) 
+};
 
+// ReactDOM.render(<App />, document.getElementById('root'));
 export default App;
